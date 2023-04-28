@@ -1,0 +1,54 @@
+{
+  "name": "cursor-commands",
+  "displayName": "Cursor Commands",
+  "version": "1.0.0",
+  "description": "Multiple Cursor Commands for your needs",
+  "categories": [
+    "Other"
+  ],
+  "bugs": "https://github.com/bjrmatos/vscode-cursor-commands/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjrmatos/vscode-cursor-commands"
+  },
+  "license": "MIT",
+  "publisher": "BJRMatos",
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./",
+    "lint": "eslint src --ext ts",
+    "pretest": "npm run compile && npm run lint",
+    "test": "node ./out/test/runTest.js",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-commands.moveCursorToViewportCenter",
+        "title": "Move Cursor To the Center of Editor Viewport"
+      },
+      {
+        "command": "cursor-commands.scrollCenterToCursor",
+        "title": "Scroll To the Center at the Current Cursor Position"
+      }
+    ]
+  },
+  "activationEvents": [],
+  "devDependencies": {
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "@types/vscode": "^1.77.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.39.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "vscode": "^1.77.0"
+  }
+}
